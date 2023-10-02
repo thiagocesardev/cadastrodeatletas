@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Background from './assets/background.svg'
+import Background from './assets/background10.png'
 
 export const Container = styled.div`
         background: url("${Background}");
@@ -7,7 +7,7 @@ export const Container = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 20px;
         
 `;
 
@@ -73,7 +73,7 @@ color: #FFFFFF;
 export const Button = styled.button`
 width: 342px;
 height: 74px;
-background: rgba(0, 0, 0, 0.8);
+background:#4F4F4F;
 border-radius: 14px;
 border: none;
 color:#FFFFFF;
