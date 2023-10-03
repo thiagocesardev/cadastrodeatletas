@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/thiagocesardev/project-react/static/js/main.785f6825.js",
+    "static/media/background10.png": "/thiagocesardev/project-react/static/media/background10.cbac5a0c6a50859c6d50.png",
+    "static/media/people1.png": "/thiagocesardev/project-react/static/media/people1.7f6bf8dfef120a267d22.png",
+    "static/media/trash.svg": "/thiagocesardev/project-react/static/media/trash.78abf00733faa708d03c8143a5455e7f.svg",
+    "static/media/arrow.svg": "/thiagocesardev/project-react/static/media/arrow.47fc491de1c081828a3a4daa6366519c.svg",
+    "index.html": "/thiagocesardev/project-react/index.html",
+    "main.785f6825.js.map": "/thiagocesardev/project-react/static/js/main.785f6825.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.785f6825.js"
+  ]
+}
