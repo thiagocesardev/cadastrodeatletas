@@ -41,9 +41,6 @@ function deleteUser (userId) {
   
 }
 
-
-
-
   return (
     <Container>
       <Image alt="logo-imagem" src={People} />
