@@ -1,45 +1,52 @@
-import React, { useState, useRef } from "react";
+// REACT HOOK => useStale, useRef, useEffect (Efeiro colateral)
 
-import People from './assets/people1.png';
-import Arrow from "./assets/arrow.svg";
-import Trash from "./assets/trash.svg";
+import React, { useState, useRef } from "react";
+import axios from "axios";
+import People from '../../assets/people1.png';
+import Arrow from "../../assets/arrow.svg";
+import { useNavigate } from "react-router";
+
+
+import ContainerItens from '../../components/ContainerItens'
+import Button from "../../components/Button";
+import H1 from '../../components/Title'
 
 import {
   Container,
   Image,
-  ContainerItens,
-  H1,
+ 
   InputLabel,
   Input,
-  Button,
-  User,
+
+
 } from "./styles";
+
+
+
 
 
 //REACT HOOT
 function App() {
+  const navigate = useNavigate ();
 
   const [users, setUsers] = useState([]);
   const inputName = useRef()
   const inputAge = useRef()
 
+  //Como comunicando com BackEnd
+  async function addNewUser() {
 
-  function addNewUser() {
-    setUsers([...users,
-    {
-      id: Math.random(),
+    //Peguei só o data, que são os dados do usuários
+    const { data: newUser } = await axios.post("http://localhost:3001/users", {
       name: inputName.current.value,
-      age: inputAge.current.value
-    }
-    ])
+      age: inputAge.current.value,
+    });
+
+
+    setUsers([...users, newUser,]);
+    navigate ("/usuarios");
+
   }
-
-
-function deleteUser (userId) {
-  const newUsers =  users.filter (user => user.id !== userId)
-  setUsers (newUsers);
-  
-}
 
   return (
     <Container>
@@ -56,16 +63,7 @@ function deleteUser (userId) {
         <Button onClick={addNewUser}>
           Cadastrar<img alt="seta" src={Arrow} />
         </Button>
-        <ul>
-          {users.map((user) => (
 
-            <User key={user.id}>
-              <p>{user.name}</p> <p>{user.age}</p>
-              <button onClick={() => deleteUser (user.id)}>
-                <img src={Trash} alt="lata-de-lixo" /></button>
-            </User>
-          ))}
-        </ul>
       </ContainerItens>
     </Container>
   );
